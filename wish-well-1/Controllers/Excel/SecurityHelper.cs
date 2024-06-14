@@ -41,12 +41,12 @@ namespace wish_well_1.Controllers.Excel
             return cipherText;
         }
 
-        public static byte[] GetHash(string inputString) {
+        private static byte[] GetHash(string inputString) {
             using (HashAlgorithm algorithm = SHA256.Create())
                 return algorithm.ComputeHash(Encoding.UTF8.GetBytes(inputString));
         }
 
-        public static string GetHashString(string inputString) {
+        public static string Hash(string inputString) {
             StringBuilder sb = new StringBuilder();
             foreach (byte b in GetHash(inputString))
                 sb.Append(b.ToString("X2"));
