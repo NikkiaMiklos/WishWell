@@ -4,22 +4,22 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace wish_well_1.Controllers.Excel
 {
-    public class ExcelSession
+    public static class ExcelSession
     {
-        private string EncryptEmail(string email) {
-            return "";
+        private static string EncryptEmail(string email) {
+            return SecurityHelper.Encrypt(email);
 
         }
-        private string HashPassword(string password) {
-            return "";
+        private static string HashPassword(string password) {
+            return SecurityHelper.GetHashString(password);
         }
-        private bool TryLogin(string email, string password) {
+        private static bool TryLogin(string email, string password) {
             var hashedPassword = HashPassword(password);
             var encryptedEmail = EncryptEmail(email);
 
             return false;
         }
-        public bool Login([FromBody] string email, [FromBody] string password) {
+        public static bool Login(string email, string password) {
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password)) {
                 return false;
             }

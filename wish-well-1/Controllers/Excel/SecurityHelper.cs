@@ -3,7 +3,7 @@ using System.Text;
 
 namespace wish_well_1.Controllers.Excel
 {
-    public class SecurityHelper
+    public static class SecurityHelper
     {
         public static string Encrypt(string clearText) {
             string EncryptionKey = "abc123";
