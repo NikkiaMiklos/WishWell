@@ -12,12 +12,13 @@ namespace wish_well_1.Controllers.API
     [ApiController]
     public class SessionController : ControllerBase
     {
+        private ExcelSessionHelper excelSessionHelper = new ExcelSessionHelper();
 
         // POST api/<Session>
         [HttpPost("/login")]
         public bool Post([FromBody] string email, [FromBody] string password) {
 
-            return ExcelSession.Login(email, password);
+            return excelSessionHelper.Login(email, password);
         }
 
     }
