@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using System.Text.Json.Serialization;
+﻿using Microsoft.AspNetCore.Mvc;
 using wish_well_1.Controllers.Excel;
 
 
@@ -12,7 +10,7 @@ namespace wish_well_1.Controllers.API
     [ApiController]
     public class SessionController : ControllerBase
     {
-        private ExcelSessionHelper excelSessionHelper = new ExcelSessionHelper();
+        private ExcelSessionController excelSessionHelper = new ExcelSessionController();
 
         // POST api/<Session>
         [HttpPost("/login")]
