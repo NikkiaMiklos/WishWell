@@ -1,3 +1,6 @@
+using System.Runtime.CompilerServices;
+using wish_well_1;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -18,8 +21,14 @@ app.UseRouting();
 
 
 app.MapControllerRoute(
+    name: "session",
+    pattern: "session",
+    defaults: new { controller = "Session"});
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");
+
 
 app.MapFallbackToFile("index.html"); ;
 
