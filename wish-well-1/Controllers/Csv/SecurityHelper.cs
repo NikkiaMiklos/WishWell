@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace wish_well_1.Controllers.Excel
+namespace wish_well_1.Controllers
 {
     public static class SecurityHelper
     {

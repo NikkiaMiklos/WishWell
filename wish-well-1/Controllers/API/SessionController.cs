@@ -1,23 +1,33 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using wish_well_1.Controllers.Excel;
 
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
-namespace wish_well_1.Controllers.API
+namespace wish_well_1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Route("session")]
+
     public class SessionController : ControllerBase
     {
-        private ExcelSessionController excelSessionHelper = new ExcelSessionController();
+        private SessionCsvController excelSessionHelper = new SessionCsvController();
 
-        // POST api/<Session>
-        [HttpPost("/login")]
-        public bool Post([FromBody] string email, [FromBody] string password) {
+        private readonly ILogger<SessionController> _logger;
 
-            return excelSessionHelper.Login(email, password);
+        public SessionController(ILogger<SessionController> logger) {
+            _logger = logger;
         }
+
+        [HttpPost("login")]
+        public IActionResult Post()
+        {
+            ExampleCsvControllerUse.TestUser();
+            ExampleCsvControllerUse.TestProduct();
+            var email = "email";
+            var password = "password";
+            
+            return Ok(excelSessionHelper.Login(email, password));
+        }
+
 
     }
 }
