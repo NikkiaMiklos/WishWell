@@ -3,7 +3,6 @@ using wish_well_1.Controllers.Excel;
 
 namespace wish_well_1.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     [Route("session")]
 
@@ -27,7 +26,5 @@ namespace wish_well_1.Controllers
             
             return Ok(excelSessionHelper.Login(email, password));
         }
-
-
     }
 }
