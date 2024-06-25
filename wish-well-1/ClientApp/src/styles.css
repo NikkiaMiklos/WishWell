@@ -1,16 +1,145 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #4b5858;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-code {
-  color: #e01a76;
+.login {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  width: 500px;
+  text-align: center;
+  filter: drop-shadow(16px 16px #58857d);
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  .login h1 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .login input[type="email"],
+  .login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .login button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 3px;
+    background-color: #58857d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+    .login button:hover {
+      background-color: #1f4268;
+    }
+
+.signup-option {
+  margin-top: 20px;
 }
+
+  .signup-option a {
+    color: #1f4268;
+    text-decoration: none;
+  }
+
+    .signup-option a:hover {
+      text-decoration: underline;
+    }
+
+.signup {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  width: 400px;
+  text-align: center;
+  filter: drop-shadow(16px 16px #58857d);
+}
+
+  .signup h1 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .signup input[type="text"],
+  .signup input[type="email"],
+  .signup input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .signup button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 3px;
+    background-color: #58857d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+    .signup button:hover {
+      background-color: #0056b3;
+    }
+
+.password-note {
+  font-size: 12px;
+  color: #666;
+  text-align: left;
+}
+
+.products {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 700px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+  .products h1 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .products input[type="file"] {
+    margin: 20px 0;
+  }
+
+  .products table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .products table, th, td {
+    border: 1px solid #ccc;
+  }
+
+  .products th, td {
+    padding: 10px;
+    text-align: left;
+  }
+
+  .products th {
+    background-color: #58857d;
+    color: white;
+  }

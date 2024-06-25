@@ -1,0 +1,33 @@
+<div id="login" class="login" [hidden]="state!='login'">
+  <h1>Wishwell Login</h1>
+  <form>
+    <label for="email">Email:</label>
+    <input type="email" name="Email" placeholder="Email" required>
+    <label for="password">Password:</label>
+    <input type="password" name="Password" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+  <div class="signup-option">
+    <p>Don't have an account? <button type="button" (click)="this.state='signup'">Sign up</button></p>
+  </div>
+</div>
+<div class="signup" [hidden]="state!='signup'">
+  <h1>Sign-up to Save your Wishlist</h1>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" name="name" placeholder="Name" required>
+    <label for="email">Email:</label>
+    <input type="email" name="email" placeholder="Email" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" placeholder="Password" required>
+    <div class="passwordcriteria">
+      <p>Password must contain:</p>
+      <ul>
+        <li>Upper and lowercase letters</li>
+        <li>At least one number</li>
+        <li>At least one special character</li>
+      </ul>
+    </div>
+    <button type="submit">Sign Up</button>
+  </form>
+</div>
