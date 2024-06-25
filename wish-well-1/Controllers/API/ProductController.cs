@@ -26,7 +26,6 @@ namespace wish_well_1.Controllers
         
         public ActionResult<Product[]> ByUserId([FromQuery(Name = "userId")]  int userId) {
             var result = _ProductsCsvController.getProductsByUserId(userId);
-            var json = JsonSerializer.Serialize(result);
             return Ok(result);
         }
     }
