@@ -1,14 +1,16 @@
-﻿using static wish_well_1.Controllers.CsvController;
+﻿using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
+using static wish_well_1.Controllers.CsvController;
 
 namespace wish_well_1.Controllers
 {
     public class Product
     {
         public int ID { get; set; }
-        public string Url;
-        public string Name;
-        public string Price;
-        public int UserId;
+        public string Url { get; set; }
+        public string Name { get; set; }
+        public string Price { get; set; }
+        public int UserId { get; set; }
         
         public Product(string csv)
         {

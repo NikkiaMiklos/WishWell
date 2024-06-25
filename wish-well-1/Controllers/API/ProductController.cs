@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace wish_well_1.Controllers
 {
@@ -20,6 +20,14 @@ namespace wish_well_1.Controllers
             int userId = string.IsNullOrEmpty(product.UserId.ToString()) ? -1 : product.UserId;
 
             return Ok(_ProductsCsvController.addProductToList(productID, name, url, price, userId));
+        }
+
+        [HttpGet("ByUserId")]
+        
+        public ActionResult<Product[]> ByUserId([FromQuery(Name = "userId")]  int userId) {
+            var result = _ProductsCsvController.getProductsByUserId(userId);
+            var json = JsonSerializer.Serialize(result);
+            return Ok(result);
         }
     }
 }

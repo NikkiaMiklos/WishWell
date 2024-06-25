@@ -30,5 +30,14 @@ namespace wish_well_1.Controllers
                 return true;
             }
         }
+        public Product[] getProductsByUserId(int userId) { 
+            var products = new List<Product>();
+            CsvController.ReadEachProductByLambda((Product product) => {
+                if (product.UserId == userId) {
+                    products.Add(product);
+                }
+            });
+            return products.ToArray();
+        }
     }
 }

@@ -5,9 +5,9 @@ namespace wish_well_1.Controllers
     public class User
     {
         public int ID { get; set; }
-        public string Name;
-        public string Email;
-        public string Password;
+        public string Name { get; set; };
+        public string Email { get; set; };
+        public string Password { get; set; };
         public User(string? csv)
         {
             string[] split = csv.Split(",");
