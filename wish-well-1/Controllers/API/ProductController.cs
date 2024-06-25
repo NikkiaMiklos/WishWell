@@ -11,13 +11,13 @@ namespace wish_well_1.Controllers
 
         [HttpPost("create")]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([FreeBody] Product product)
+        public ActionResult Create([FromBody] Product product)
         {
-            int productID = int.IsNullOrEmpty(product.ID) ? "" : product.ID;
+            int productID = string.IsNullOrEmpty(product.ID.ToString()) ? -1 : product.ID;
             string name = string.IsNullOrEmpty(product.Name) ? "" : product.Name;
             string url = string.IsNullOrEmpty(product.Url) ? "" : product.Url;
             string price = string.IsNullOrEmpty(product.Price) ? "" : product.Price;
-            int userId = int.IsNullOrEmpty(product.UserId) ? "" : product.UserId;
+            int userId = string.IsNullOrEmpty(product.UserId.ToString()) ? -1 : product.UserId;
 
             return Ok(_ProductsCsvController.addProductToList(productID, name, url, price, userId));
         }
