@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
 using wish_well_1.Controllers.Excel;
 
 namespace wish_well_1.Controllers
@@ -17,14 +19,14 @@ namespace wish_well_1.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Post()
+        public IActionResult Post([FromBody] UserLogin user)
         {
-            ExampleCsvControllerUse.TestUser();
-            ExampleCsvControllerUse.TestProduct();
-            var email = "email";
-            var password = "password";
-            
-            return Ok(excelSessionHelper.Login(email, password));
+  
+            if (string.IsNullOrEmpty(user.Password) || string.IsNullOrEmpty(user.Email)) {
+                return StatusCode(500, "Must be a valid user with email and password.");
+            } else { 
+                return Ok(excelSessionHelper.Login(user.Email, user.Password));
+            }
         }
     }
 }

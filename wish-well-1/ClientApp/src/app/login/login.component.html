@@ -2,10 +2,10 @@
   <h1>Wishwell Login</h1>
   <form>
     <label for="email">Email:</label>
-    <input type="email" name="Email" placeholder="Email" required>
+    <input type="email" name="Email" placeholder="Email" [(ngModel)]="email" required>
     <label for="password">Password:</label>
-    <input type="password" name="Password" placeholder="Password" required>
-    <button type="submit">Login</button>
+    <input type="password" name="Password" placeholder="Password" [(ngModel)]="password" required>
+    <button type="button" (click)="tryLogin()">Login</button>
   </form>
   <div class="signup-option">
     <p>Don't have an account? <button type="button" (click)="this.state='signup'">Sign up</button></p>
@@ -28,6 +28,6 @@
         <li>At least one special character</li>
       </ul>
     </div>
-    <button type="submit">Sign Up</button>
+    <button type="button">Sign Up</button>
   </form>
 </div>

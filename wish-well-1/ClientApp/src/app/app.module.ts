@@ -28,8 +28,8 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'login', component: LoginComponent, pathMatch: 'full' },
+      { path: '', component: LoginComponent, pathMatch: 'full' },
+      { path: 'products', component: HomeComponent, pathMatch: 'full' },
     ])
   ],
   providers: [],

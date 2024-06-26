@@ -1,13 +1,21 @@
-﻿using System.Xml.Linq;
+﻿using System;
+using System.Xml.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace wish_well_1.Controllers
 {
+    public class UserLogin
+    {
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+    }
     public class User
     {
-        public int ID { get; set; }
-        public string Name { get; set; };
-        public string Email { get; set; };
-        public string Password { get; set; };
+        public int? ID { get; set; }
+        public string? Name { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
         public User(string? csv)
         {
             string[] split = csv.Split(",");
@@ -26,12 +34,14 @@ namespace wish_well_1.Controllers
                 Password = "";
             }
         }
+        
         public User(int id, string name, string email, string password) {
             ID = id;
             Name = name;
             Email = email;  
             Password = password;
         }
+
         public string AsCsvSafeString()
         {
             return $"{Uri.EscapeDataString(ID.ToString())},{Uri.EscapeDataString(Name)},{Uri.EscapeDataString(Email)},{Uri.EscapeDataString(Password)}";
