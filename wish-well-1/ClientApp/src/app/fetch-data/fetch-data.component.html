@@ -1,20 +1,18 @@
-<p *ngIf="!forecasts"><em>Loading...</em></p>
+<p *ngIf="!Products"><em>Loading...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="Products">
   <thead>
     <tr>
       <th>Product Name</th>
       <th>Product Link</th>
       <th>Price</th>
-      <th>Summary</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.date }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
+    <tr *ngFor="let product of Products"> 
+      <td>{{ product.name }}</td>
+      <td>{{ product.url}}</td>
+      <td>{{ product.price }}</td>
     </tr>
   </tbody>
 </table>

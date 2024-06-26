@@ -29,7 +29,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent, pathMatch: 'full' },
-      { path: 'products', component: HomeComponent, pathMatch: 'full' },
+      { path: 'wishes', component: HomeComponent},
     ])
   ],
   providers: [],
