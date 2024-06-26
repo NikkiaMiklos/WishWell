@@ -18,8 +18,8 @@ namespace wish_well_1.Controllers
         private static int GetNextUserId(List<User> list) {
             var topId = 0;
             foreach(var item in list) {
-                if (item.ID > topId) { 
-                    topId = item.ID; 
+                if (item.ID !=null && item.ID > topId) { 
+                    topId = (int)item.ID; 
                 }
             }
             return topId+1;
@@ -28,7 +28,7 @@ namespace wish_well_1.Controllers
             var topId = 0;
             foreach (var item in list) {
                 if (item.ID > topId) {
-                    topId = item.ID;
+                    topId = (int)item.ID;
                 }
             }
             return topId + 1;
