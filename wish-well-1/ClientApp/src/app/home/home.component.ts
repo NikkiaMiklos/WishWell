@@ -26,13 +26,13 @@ export class HomeComponent {
     let result: boolean;
 
     await this.httpClient.post(this.baseUrl + 'product/create', {
-      name: this.name;
-      url: this.url;
-      price: this.price;
-      userId: this.userId;
+      Name: this.name,
+      Url: this.url,
+      Price: this.price +"",
+      UserId: 2,
     }).subscribe((success) => {
-      if (success) {
-        this.router.navigateByUrl('/products')
+      if (success == 'true') {
+        this.router.navigateByUrl('wishes');
       }
     });
   }

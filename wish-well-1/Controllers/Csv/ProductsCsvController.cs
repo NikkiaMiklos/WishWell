@@ -20,15 +20,8 @@ namespace wish_well_1.Controllers
             });
             return productExists;
         }
-        public bool addProductToList(int productId, string Url, string Name, string Price, int userID ) {
-            if (!checkIfProductExists(productId))
-            {
-                return CsvController.AddProduct(Url, Name, Price, userID);
-            }
-            else
-            {
-                return true;
-            }
+        public bool addProductToList( string Url, string Name, string Price, int userID ) {
+            return CsvController.AddProduct(Url, Name, Price, userID);
         }
         public Product[] getProductsByUserId(int userId) { 
             var products = new List<Product>();

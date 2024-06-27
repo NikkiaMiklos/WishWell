@@ -4,6 +4,14 @@ using static wish_well_1.Controllers.CsvController;
 
 namespace wish_well_1.Controllers
 {
+    public class ProductCandidate
+    {
+        public string Url { get; set; }
+        public string Name { get; set; }
+        public string Price { get; set; }
+        public int UserId { get; set; }
+    }
+
     public class Product
     {
         public int ID { get; set; }
