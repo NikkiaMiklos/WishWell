@@ -12,8 +12,7 @@ namespace wish_well_1.Controllers.API
 
         // POST: UserController/Create
         [HttpPost("create")]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([FromBody] User user)
+        public IActionResult Post([FromBody] CreateUser user)
         {
             string name = string.IsNullOrEmpty(user.Name) ? "" : user.Name;
             string email = string.IsNullOrEmpty(user.Email) ? "" : user.Email;

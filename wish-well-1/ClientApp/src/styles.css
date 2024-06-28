@@ -143,3 +143,8 @@ body {
     background-color: #58857d;
     color: white;
   }
+.login .errorMessage,
+.signup  .errorMessage{
+  color: red;
+  padding-bottom: .2em;
+}

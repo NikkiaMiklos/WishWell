@@ -5,6 +5,7 @@
     <input type="email" name="Email" placeholder="Email" [(ngModel)]="email" required>
     <label for="password">Password:</label>
     <input type="password" name="Password" placeholder="Password" [(ngModel)]="password" required>
+    <div [hidden]="hideLoginError" class="errorMessage">Login Failed</div>
     <button type="button" (click)="tryLogin()">Login</button>
   </form>
   <div class="signup-option">
@@ -15,11 +16,12 @@
   <h1>Sign-up to Save your Wishlist</h1>
   <form>
     <label for="name">Name:</label>
-    <input type="text" name="name" placeholder="Name" required>
+    <input type="text" name="name" placeholder="Name" [(ngModel)]="userCandidate.Name" required>
     <label for="email">Email:</label>
-    <input type="email" name="email" placeholder="Email" required>
+    <input type="email" name="email" placeholder="Email" [(ngModel)]="userCandidate.Email" required>
     <label for="password">Password:</label>
-    <input type="password" name="password" placeholder="Password" required>
+    <input type="password" name="password" placeholder="Password" [(ngModel)]="userCandidate.Password" required>
+    <div [hidden]="hidePasswordError" class="errorMessage">Invalid Password</div>
     <div class="passwordcriteria">
       <p>Password must contain:</p>
       <ul>
@@ -28,6 +30,7 @@
         <li>At least one special character</li>
       </ul>
     </div>
-    <button type="button">Sign Up</button>
+    <div [hidden]="hideCreateError" class="errorMessage">Create Failed</div>
+    <button type="button" (click)="createUser()">Sign Up</button>
   </form>
 </div>
