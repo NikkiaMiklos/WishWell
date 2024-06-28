@@ -10,6 +10,13 @@ namespace wish_well_1.Controllers
         public string? Email { get; set; }
         public string? Password { get; set; }
     }
+    public class CreateUser 
+    {
+        public int? ID { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
     public class User
     {
         public int? ID { get; set; }

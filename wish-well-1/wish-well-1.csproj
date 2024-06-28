@@ -14,6 +14,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.13" />
     <PackageReference Include="Moq" Version="4.20.70" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.6.2" />
     <PackageReference Include="System.Runtime" Version="4.3.1" />
   </ItemGroup>
 
@@ -25,7 +26,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\login\LoginService.ts" />
+    <None Remove="ClientApp\src\app\login\User.ts" />
+    <None Remove="ClientApp\src\app\utility\Cookies.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Controllers\Database\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\login\LoginService.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\login\User.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\utility\Cookies.ts" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

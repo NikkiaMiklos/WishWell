@@ -3,22 +3,22 @@
     public class SessionCsvController
     {
 
-        private bool TryLogin(string email, string password) {
+        private User? TryLogin(string email, string password) {
             var hashedPassword = SecurityHelper.Hash(password);
             var encryptedEmail = SecurityHelper.Encrypt(email);
 
-            var found = false;
+            User? found = null;
             CsvController.ReadEachUserByLambda((User user) => {
                 if (user.Password == hashedPassword && user.Email == encryptedEmail) {
-                    found = true;
+                    found = user;
                 }
             });
             return found;
         }
 
-        public bool Login(string email, string password) {
+        public User? Login(string email, string password) {
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password)) {
-                return false;
+                return null;
             }
 
             return TryLogin(email,password);
